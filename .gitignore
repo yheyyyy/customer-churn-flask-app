@@ -1,0 +1,7 @@
+# Virtualenv files
+venv/
+
+# Byte-compiled, cached, optimized files
+__pycache__/
+notebooks/catboost_info/
+notebooks/tmp/

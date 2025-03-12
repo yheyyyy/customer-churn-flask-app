@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>📱Telco Churn Prediction</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class= 'container'>
+        <h1>📱Telco Churn Prediction</h1>
+        <h2>To make a prediction on whether the customer will churn,<br>
+             enter the following information:</h2>
+        <form name = "churnform" id = "churnform" method="POST">
+            <div class="left-side">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" value="75" min="1" max="99"required="required">
+                <br>
+                <label for="num_dependents">Number of Dependents</label>
+                <select name="num_dependents" id="num_dependents" required="required">
+                    <option value=0 selected>None</option>
+                    <option value=1>1 </option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                 </select><br>
+                <label for="area_id">Area ID</label>
+                <input type="number" id="area_id" name="area_id" min="1" max="2000" value="607" required="required">
+                <br>
+            </div>
+            <div class="right-side">
+                <label for="contract_type">Contract Type</label>
+                <select name="contract_type" id="contract_type" required="required">
+                    <option value=0></option>
+                    <option value=1 selected>Monthly</option>
+                    <option value=12>One Year</option>
+                    <option value=24>Two Year</option>
+                </select><br>
+                <label for="num_referrals">Number of Referrals</label>
+                <select name="num_referrals" id="num_referrals" required="required">
+                    <option value=0 >None</option>
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3 selected>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                    <option value=11>11</option>
+                </select><br>
+                <label for="tenure_months">Tenure Months</label>
+                <input type="number" id="tenure_months" name="tenure_months" value="3" min="1" max="99" required="required">
+                <br>
+                <label for="internet_type">Internet Type</label>
+                <select name="internet_type" id="internet_type" required="required">
+                    <option value=0 >None</option>
+                    <option value=1>DSL</option>
+                    <option value=2>Cable</option>
+                    <option value=3 selected>Fibre Optic</option>
+                </select>
+                <br>
+                <label for="total_monthly_fee">Total Monthly Fee</label>
+                <input type="number" step="0.01" id="total_monthly_fee" name="total_monthly_fee" value="20.05" min="0.01" max="200" required="required">
+                <br>
+                <label for="total_charges_quarter">Total Charges/ Quarter</label>
+                <input type="number" step="0.01" id="total_charges_quarter" name="total_charges_quarter" value="267.40" min="0.01" max="10000" required="required">
+                <br>
+                <label for="avg_gb_download_monthly">Monthly Average Downloads GB</label>
+                <input type="number" id="avg_gb_download_monthly" name="avg_gb_download_monthly" value="11" min="0" max="99" required="required">
+                <br>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn">Predict</button>
+                <button type="reset" class="btn">Reset</button>
+                <br>
+            </div>
+        </form>
+    
+        {% if prediction is defined %}
+        <h3>Model Prediction: 
+            {% if prediction == 0 %}Not Churned 🥳
+            {% else %}Churned 😔
+            {% endif %}
+        </h3>
+        {% endif %}
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
