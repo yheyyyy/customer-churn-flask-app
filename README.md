@@ -78,6 +78,6 @@ customer-churn-flask-app/
    - The ROC is less affected by class imbalance as it evaluates the models effectiveness of the binary classfication model is based on the True Positive Rate (TPR- Churn) vs the False Positive Rate (FPR- No-churn), at different threshold values, providing a more holistic view of the model's overall performance.
      
    ### Business Impact
-   For TrustTelecom, the industry is highly competitive and every newly acquired customer is more costly than maintaining the existing customers. Hence, it is important that the company reach out to potential 'Churners' before they switch out to other telcos.
+   For the Telecom industry it is highly competitive and every newly acquired customer is more costly than maintaining the existing customers. Hence, it is important that the company reach out to potential 'Churners' before they switch out to other telcos.
    
    The misclassification of a churn customer as no-churn (false negative)- a potential loss of revenue and a non-churn customer as churn (false positive)- unnecessary costs for retention has to be considered and needs to be weighed accordingly by the management. The ROC metric provides a holistic and balanced evaluation of the ability to identify churners (true positives) while minimising false positives, while allowing decision makers to choose the optimal threshold for business needs to increase profitability.
